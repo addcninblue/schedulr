@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "Schedulr", suffix: " · Phoenix Framework" %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+  </head>
+  <body class="bg-white dark:bg-black">
+    <header>
+      <section class="">
+        <nav role="navigation">
+          <div class="relative flex items-center justify-between">
+            <div class="absolute inset-y-10 left-0 flex items-center">
+              <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono hidden sm:flex">pomodoro.addcnin.blue</span>
+              <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono sm:hidden">pomodoro</span>
+            </div>
+            <%# <div class="absolute inset-y-10 right-0 flex items-center"> %>
+            <%#   <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono"><%= link "help", to: Routes.help_path(@conn, :index) %1> </span> %>
+            <%# </div> %>
+            <%# <%= if function_exported?(Routes, :live_dashboard_path, 2) do %1> %>
+            <%#   <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@socket, :home) %1></li> %>
+            <%# <% end %1> %>
+          </div>
+        </nav>
+      </section>
+    </header>
+    <%= @inner_content %>
+  </body>
+</html>
